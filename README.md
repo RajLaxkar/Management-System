@@ -1,1 +1,1 @@
-# Management-System
+The system manages employee records by keeping track of all employees and their details. It allows users to view a list of all employees, add new employees, remove an employee by name, and filter employees based on specific details such as name, department, or role.
