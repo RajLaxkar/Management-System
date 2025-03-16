@@ -33,8 +33,8 @@ def add_employee(request):
     else:
         return HttpResponse("An exception occured ! not added") 
 
-def remove_employee(request, emp_id = 0):       # emp_id: An optional parameter (default is 0). If provided, it identifies the employee to be deleted.
-    if emp_id:                                  # If emp_id is greater than 0, it means the user wants to remove a specific employee.
+def remove_employee(request, emp_id = 0):       
+    if emp_id:                                  
         try:
             emp_to_be_removed = Employee.objects.get(id=emp_id)
             emp_to_be_removed.delete()
@@ -74,13 +74,7 @@ def filter_employee(request):
 
 
 
-# "POST" is used when submitting form data to the server (e.g., adding an employee).
-# "GET" is used when simply requesting a page from the server (e.g., opening the Add Employee form).
-# If the request method is "GET", it means the user is opening the Add Employee page but has not submitted the form yet.
-# The render(request, 'add.html') function loads and displays the add.html template (which is likely your employee registration form).
 
-# How It Works in a Web App?
-# User visits the URL linked to add_employee view (e.g., /add-employee/).
 # Since no form is submitted yet, request.method is "GET".
 # The server responds by rendering the add.html template, which likely contains a form where the user can enter employee details.
 # Once the user fills out the form and clicks "Submit", the form sends a "POST" request with the entered data.
